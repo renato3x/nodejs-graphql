@@ -11,7 +11,10 @@ async function main() {
   });
 
   const schema = createSchema({ typeDefs, resolvers });
-  const yoga = createYoga({ schema });
+  const yoga = createYoga({
+    schema,
+    graphqlEndpoint: '/',
+  });
 
   // const server = new ApolloServer({ typeDefs, resolvers });
   const server = createServer(yoga);
